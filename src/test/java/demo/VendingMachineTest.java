@@ -37,14 +37,18 @@ public class VendingMachineTest {
 	}
 
 	@Test
-	public void 何も投入しなかったら釣り銭を返さない() throws Exception {
+	public void 何も投入せずに払い戻したら釣り銭として空リストを返す() throws Exception {
 		assertEquals(Arrays.asList(), vm.refund());
 	}
 
 	@Test
-	public void 百円を投入したら釣り銭に百円を返す() throws Exception {
+	public void 百円を投入して払い戻したら釣り銭に百円を返す() throws Exception {
 		vm.receive(100);
 		assertEquals(Arrays.asList(100), vm.refund());
 	}
 
+	@Test
+	public void 五十円と五百円を投入して払い戻しをしたら釣り銭に五百円と五十円を返す() throws Exception {
+
+	}
 }
