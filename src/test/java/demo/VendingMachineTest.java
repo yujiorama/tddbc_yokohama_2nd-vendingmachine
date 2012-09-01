@@ -41,5 +41,10 @@ public class VendingMachineTest {
 		assertEquals(Arrays.asList(), vm.refund());
 	}
 
+	@Test
+	public void 百円を投入したら釣り銭に百円を返す() throws Exception {
+		vm.receive(100);
+		assertEquals(Arrays.asList(100), vm.refund());
+	}
 
 }
