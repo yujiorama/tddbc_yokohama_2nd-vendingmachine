@@ -9,7 +9,7 @@ public class VendingMachine {
 	}
 
 	public void receive(int i) {
-		this.amount = i;
+		this.amount += i;
 	}
 
 }
