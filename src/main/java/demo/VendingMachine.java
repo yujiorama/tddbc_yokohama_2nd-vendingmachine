@@ -5,20 +5,24 @@ import java.util.List;
 
 public class VendingMachine {
 
-	private int amount = 0;
 	private List<Integer> insertedCoins = new ArrayList<Integer>();
 
 	public int totalAmount() {
-		return this.amount;
+		int amount = 0;
+		for (int i : insertedCoins) {
+			amount += i;
+		}
+		return amount;
 	}
 
 	public void receive(int i) {
-		this.amount += i;
 		this.insertedCoins.add(i);
 	}
 
 	public List<Integer> refund() {
 		return insertedCoins;
 	}
+	// amount と insertedCoins が同じ情報を持ってる
+	// refound が insertedCoins を空にしない
 
 }

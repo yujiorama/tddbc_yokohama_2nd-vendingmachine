@@ -48,7 +48,9 @@ public class VendingMachineTest {
 	}
 
 	@Test
-	public void 五十円と五百円を投入して払い戻しをしたら釣り銭に五百円と五十円を返す() throws Exception {
-
+	public void 五十円と五百円を投入して払い戻しをしたら釣り銭に五十円と五百円を返す() throws Exception {
+		vm.receive(50);
+		vm.receive(500);
+		assertEquals(Arrays.asList(50,500), vm.refund());
 	}
 }
