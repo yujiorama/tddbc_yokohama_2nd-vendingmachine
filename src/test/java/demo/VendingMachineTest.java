@@ -2,6 +2,8 @@ package demo;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,6 +34,11 @@ public class VendingMachineTest {
 		vm.receive(100);
 		vm.receive(10);
 		assertEquals(110, vm.totalAmount());
+	}
+
+	@Test
+	public void 何も投入しなかったら釣り銭を返さない() throws Exception {
+		assertEquals(Arrays.asList(), vm.refund());
 	}
 
 
